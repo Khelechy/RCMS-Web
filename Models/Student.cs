@@ -18,6 +18,8 @@ namespace RCMS_web.Models
         [Column("FirstName")]
         public string FirstMidName { get; set; }
 
+        public string Email {get; set; }
+
         public string MatricNo { get; set; }
         [Display(Name = "Full Name")]
         public string FullName

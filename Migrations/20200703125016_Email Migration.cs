@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RCMS_web.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class EmailMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,6 +30,7 @@ namespace RCMS_web.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     LastName = table.Column<string>(maxLength: 50, nullable: false),
                     FirstName = table.Column<string>(maxLength: 50, nullable: false),
+                    Email = table.Column<string>(nullable: true),
                     MatricNo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

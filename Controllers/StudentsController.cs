@@ -145,7 +145,7 @@ namespace RCMS_web.Controllers
             if (await TryUpdateModelAsync<Student>(
                 studentToUpdate,
                 "",
-                s => s.FirstMidName, s => s.LastName, s => s.MatricNo))
+                s => s.FirstMidName, s => s.LastName, s => s.MatricNo, s => s.Email))
             {
                 try
                 {

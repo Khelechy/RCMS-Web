@@ -18,13 +18,13 @@ namespace RCMS_web.Data
 
             var students = new Student[]
             {
-                new Student{FirstMidName="Carson",LastName="Alexander",MatricNo="2017/24654"},
-                new Student{FirstMidName="John",LastName="Mont",MatricNo="2017/24554"},
-                new Student{FirstMidName="Queen",LastName="Oliver",MatricNo="2017/26654"},
-                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654"},
-                new Student{FirstMidName="Megan",LastName="Joseph",MatricNo="2017/24764"},
-                new Student{FirstMidName="Carl",LastName="Allison",MatricNo="2017/24984"},
-                new Student{FirstMidName="Nino",LastName="Olivetto",MatricNo="2017/245333"}
+                new Student{FirstMidName="Carson",LastName="Alexander",MatricNo="2017/24654", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="John",LastName="Mont",MatricNo="2017/24554", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="Queen",LastName="Oliver",MatricNo="2017/26654", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="Megan",LastName="Joseph",MatricNo="2017/24764", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="Carl",LastName="Allison",MatricNo="2017/24984", Email="Onyekwerekelechimac@gmail.com"},
+                new Student{FirstMidName="Nino",LastName="Olivetto",MatricNo="2017/245333", Email="Onyekwerekelechimac@gmail.com"}
             };
             foreach (Student s in students)
             {
