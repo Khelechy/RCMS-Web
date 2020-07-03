@@ -48,7 +48,7 @@
         </nav>
         
     </header> *@
-    <img class="wave" src="../img/wave.png">
+    @* <img class="wave" src="../img/wave.png"> *@
     <div class="side-menu navbar-default ">
         <div class="drop-wrapper">
             <ui aria-labelledby="dropdownMenuDivider">
@@ -60,8 +60,8 @@
                             <span class="glyphicon glyphicon-menu-down"></span>
                         </a>
                         <div class="dropdown-content">
-                            <a href="#"><span class="glyphicon glyphicon-plus"></span> Add Student</a>
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Student</a>
+                            <a asp-area="" asp-controller="Students" asp-action="Index"><span class="glyphicon glyphicon-plus"></span> View Students</a>
+                            <a asp-area="" asp-controller="Students" asp-action="create"><span class="glyphicon glyphicon-pencil"></span> Create Student</a>
                         </div>
                     </div>
                 </li>
@@ -73,8 +73,34 @@
                             <span class="glyphicon glyphicon-menu-down"></span>
                         </a>
                         <div class="dropdown-content">
-                            <a href="#"><span class="glyphicon glyphicon-plus"></span> Add Course</a>
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Course</a>
+                            <a asp-area="" asp-controller="Courses" asp-action="Index"><span class="glyphicon glyphicon-plus"></span> View Courses</a>
+                            <a asp-area="" asp-controller="Courses" asp-action="Create"><span class="glyphicon glyphicon-pencil"></span> Create Course</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-anchor-link" href="#">
+                            <span class="glyphicon glyphicon-folder-open"></span> 
+                            <span class="link-text">Department</span>
+                            <span class="glyphicon glyphicon-menu-down"></span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a asp-area="" asp-controller="Departments" asp-action="Index"><span class="glyphicon glyphicon-plus"></span> View Departments</a>
+                            <a asp-area="" asp-controller="Departments" asp-action="Create"><span class="glyphicon glyphicon-pencil"></span> Create Department</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-anchor-link" href="#">
+                            <span class="glyphicon glyphicon-folder-open"></span> 
+                            <span class="link-text">Courses</span>
+                            <span class="glyphicon glyphicon-menu-down"></span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a asp-area="" asp-controller="Lecturers" asp-action="Index"><span class="glyphicon glyphicon-plus"></span> View Lecturers</a>
+                            <a asp-area="" asp-controller="Lecturers" asp-action="Create"><span class="glyphicon glyphicon-pencil"></span> Create Lecturer</a>
                         </div>
                     </div>
                 </li>
@@ -127,18 +153,17 @@
                 
             </div>
         </nav>
+        <div class="right-body">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+		</div>
     </div>
-    <div class="container">
-        <main role="main" class="pb-3">
+    @* <div class="container">
+        @* <main role="main" class="pb-3">
             @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - RCMS_web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+        </main> 
+    </div> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

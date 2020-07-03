@@ -6,7 +6,6 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
 
 .wave{
@@ -90,7 +89,9 @@ body{
 }
 
 .right-body{
-	padding-top: 40px;
+	margin-top: 50px;
+	padding: 30px;
+	height: 100vh;
 }
 
 .dropdown-content a{
@@ -273,8 +274,7 @@ form{
 }
 
 a{
-	display: block;
-	text-align: right;
+	display: inline;
 	text-decoration: none;
 	color: #999;
 	font-size: 1.2rem;
@@ -301,6 +301,8 @@ a:hover{
 	cursor: pointer;
 	transition: .5s;
 }
+
+
 .btn:hover{
 	background-position: right;
 }
