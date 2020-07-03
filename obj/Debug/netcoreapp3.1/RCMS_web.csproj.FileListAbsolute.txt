@@ -178,6 +178,7 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Lecturers/Details.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Lecturers/Edit.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Lecturers/Index.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Login/Index.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs

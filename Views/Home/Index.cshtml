@@ -1,25 +1,41 @@
-﻿@{
+﻿@* @{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>RCMS_Web</h1>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Welcome to Contoso University</h2>
-        <p>Contoso University is a sample application that
-        demonstrates how to use Entity Framework 6 in an 
-        ASP.NET MVC 5 web application.</p>
+<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">    
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+            <div>
+                <h3 style="color: #32be8f;">Admin Login</h3>
+                <br/>
+                <form class="form" action="index.html">
+                    <!-- <img src="img/avatar.svg"> -->
+                    <div class="input-div one">
+                    <div class="i">
+                            <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                            <h5>Username</h5>
+                            <input type="text" class="input">
+                    </div>
+                    </div>
+                    <div class="input-div pass">
+                    <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                            <h5>Password</h5>
+                            <input type="password" class="input">
+                    </div>
+                    </div>
+                    <!-- <a href="#">Forgot Password?</a> -->
+                    <br/>
+                    <input type="submit" class="btn" value="Login">
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Build it from scratch</h2>
-        <p>You can build the application by following the steps in the tutorial series on the ASP.NET site.</p>
-        <p><a class="btn btn-default" href="http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/">See the tutorial &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Download it</h2>
-        <p>You can download the completed project.</p>
-        <p><a class="btn btn-default" href="https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip">Download &raquo;</a></p>
-    </div>
-</div>
+    <script type="text/javascript" src="~/js/main.js"></script> *@

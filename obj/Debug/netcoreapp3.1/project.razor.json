@@ -20546,6 +20546,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Login/Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Students/Details.cshtml",
       "TargetPath": "Views\\Students\\Details.cshtml",
       "FileKind": "mvc"

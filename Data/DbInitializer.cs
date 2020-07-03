@@ -177,6 +177,7 @@ namespace RCMS_web.Data
             var enrollments = new Enrollment[]
             {
             new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
+            new Enrollment{StudentID=1,CourseID=3141,Grade=Grade.A},
             new Enrollment{StudentID=1,CourseID=4022,Grade=Grade.C},
             new Enrollment{StudentID=1,CourseID=4041,Grade=Grade.B},
             new Enrollment{StudentID=2,CourseID=1045,Grade=Grade.B},
