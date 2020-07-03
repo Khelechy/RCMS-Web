@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/khelechy/.dotnet/store/|arch|/|tfm|",
+      "/home/khelechy/.nuget/packages"
+    ]
+  }
+}
