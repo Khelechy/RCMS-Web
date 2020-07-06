@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using RCMS_web.Data;
+using RCMS_web.Services;
 
 namespace RCMS_web
 {
@@ -30,6 +31,8 @@ namespace RCMS_web
             services.AddControllersWithViews();
             services.AddDbContext<SchoolContext>(options =>
               options.UseSqlite(Configuration.GetConnectionString("ResultContext")));
+            
+            services.AddScoped<IEmailSender, EmailSender>(); 
              
             
         }

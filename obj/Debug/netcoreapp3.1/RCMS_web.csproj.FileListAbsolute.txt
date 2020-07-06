@@ -11,6 +11,7 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/RCMS_web.Views.pdb
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/EntityFramework.SqlServer.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/EntityFramework.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/MailKit.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
@@ -50,8 +51,10 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Win32.Registry.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/MimeKit.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/NuGet.Frameworks.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/BouncyCastle.Crypto.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/SQLitePCLRaw.batteries_v2.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/SQLitePCLRaw.nativelibrary.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/SQLitePCLRaw.core.dll
@@ -198,3 +201,4 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.dll
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.pdb
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.genruntimeconfig.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Students/SendMail.cshtml.g.cs

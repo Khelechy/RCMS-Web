@@ -20641,6 +20641,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Students/SendMail.cshtml",
+      "TargetPath": "Views\\Students\\SendMail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Lecturers/Index.cshtml",
       "TargetPath": "Views\\Lecturers\\Index.cshtml",
       "FileKind": "mvc"

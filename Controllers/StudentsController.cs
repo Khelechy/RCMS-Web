@@ -7,16 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RCMS_web.Data;
 using RCMS_web.Models;
+using MailKit.Net.Smtp;
+using Microsoft.Extensions.Configuration;
+using MimeKit;
+using RCMS_web.Services;
 
 namespace RCMS_web.Controllers
 {
     public class StudentsController : Controller
     {
         private readonly SchoolContext _context;
+        private IEmailSender _emailSender;
 
-        public StudentsController(SchoolContext context)
+        public StudentsController(SchoolContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Students
@@ -87,6 +93,65 @@ namespace RCMS_web.Controllers
             return View(student);
         }
 
+         // GET: Students/SendMail/5
+        public async Task<IActionResult> SendMail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Students
+                .Include(s => s.Enrollments)
+                    .ThenInclude(e => e.Course)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            SendIt(student);
+
+            return View(student);
+        }
+
+        public async void SendIt(Student student, bool sendAsync = true){
+            MimeMessage message = new MimeMessage();
+
+            MailboxAddress from = new MailboxAddress("UNN Result Admin", 
+            "mconyekwerekelechi@gmail.com");
+            message.From.Add(from);
+
+            MailboxAddress to = new MailboxAddress(student.FirstMidName, 
+            student.Email);
+            message.To.Add(to);
+
+            message.Subject = student.FirstMidName + " your result is ready";
+
+            BodyBuilder bodyBuilder = new BodyBuilder();
+            bodyBuilder.HtmlBody = "<h1>This is your result</h1>";
+            message.Body = bodyBuilder.ToMessageBody();
+
+             using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 465, true);
+                client.Authenticate("mconyekwerekelechi@gmail.com", "macmillian3"); // If using GMail this requires turning on LessSecureApps : https://myaccount.google.com/lesssecureapps
+                if (sendAsync)
+                {
+                    await client.SendAsync(message);
+                }
+                else
+                {
+                    client.Send(message);
+                }
+                client.Disconnect(true);
+            }
+
+
+        }
+
         // GET: Students/Create
         public IActionResult Create()
         {
@@ -132,6 +197,7 @@ namespace RCMS_web.Controllers
             }
             return View(student);
         }
+
 
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
