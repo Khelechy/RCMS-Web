@@ -202,3 +202,8 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.dll
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.pdb
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.genruntimeconfig.cache
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Twilio.dll

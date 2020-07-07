@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using RCMS_web.Data;
 using RCMS_web.Models;
 using MimeKit;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 using RCMS_web.Services;
 
 
@@ -94,7 +96,7 @@ namespace RCMS_web.Controllers
             return View(student);
         }
 
-         // GET: Students/SendMail/5
+        // GET: Students/SendMail/5
         public async Task<IActionResult> SendMail(int? id)
         {
             if (id == null)
@@ -126,13 +128,54 @@ namespace RCMS_web.Controllers
             var table = "<table>" + tableContents + "</table>";
             
 
-            string htmlBody = "<h3>Name: " + student.FullName + "</h3><h3>Matric No: " + student.MatricNo + "</h3>" + table;
-            SendIt(student, htmlBody);
+            string htmlBody = "<h3>Name: " + student.FullName + "</h3><h3>Matric No: " + student.MatricNo + "</h3><h3>Email: " + student.Email + "</h3><h3> Phone Number: " + student.PhoneNumber + "</h3>" + table;
+            SendTheEmail(student, htmlBody);
 
             return View(student);
         }
 
-        public async void SendIt(Student student, string ScrappedView, bool sendAsync = true){
+
+        // GET: Students/SendSms/5
+        public async Task<IActionResult> SendSms(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+
+            var student = await _context.Students
+                .Include(s => s.Enrollments)
+                    .ThenInclude(e => e.Course)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            Dictionary<string, string> dicGrades = new Dictionary<string, string>();
+            foreach(var item in student.Enrollments){
+                dicGrades.Add(item.Course.Title, item.Grade.ToString());
+            }
+
+            var trs = dicGrades.Select(a => String.Format("{0} = {1}", a.Key, a.Value));
+
+            var tableContents = String.Concat(trs);
+
+            var table = tableContents;
+
+            var studentPhoneNo = student.PhoneNumber;
+            
+
+            string smsBody = "Name: " + student.FullName + "Matric No: " + student.MatricNo + "Email: " + student.Email + "Phone Number: " + student.PhoneNumber + table;
+            SendTheSms(student, smsBody, studentPhoneNo).Wait();
+
+            return View(student);
+        }
+
+        public async void SendTheEmail(Student student, string ScrappedView, bool sendAsync = true){
             MimeMessage message = new MimeMessage();
 
             MailboxAddress from = new MailboxAddress("UNN Result Admin", 
@@ -167,6 +210,22 @@ namespace RCMS_web.Controllers
 
         }
 
+        public async Task SendTheSms(Student student, string smsBody, string studentPhoneNo){
+           // Find your Account Sid and Token at twilio.com/console
+            const string accountSid = "AC8bf3b6275b87918384cd7e3d3a39da1c";
+            const string authToken = "c9352368fcc62926e4fa236f7a9546d8";
+
+            TwilioClient.Init(accountSid, authToken);
+
+            var message = await MessageResource.CreateAsync(
+                body: smsBody,
+                from: new Twilio.Types.PhoneNumber("+12136994794"),
+                to: new Twilio.Types.PhoneNumber(studentPhoneNo)
+            );
+
+            Console.WriteLine(message.Sid);
+        }
+
         // GET: Students/Create
         public IActionResult Create()
         {
@@ -178,7 +237,7 @@ namespace RCMS_web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("LastName,FirstMidName,MatricNo")] Student student)
+        public async Task<IActionResult> Create([Bind("LastName,FirstMidName,MatricNo,Email,PhoneNumber")] Student student)
         {
             try{
                 if (ModelState.IsValid)
@@ -226,7 +285,7 @@ namespace RCMS_web.Controllers
             if (await TryUpdateModelAsync<Student>(
                 studentToUpdate,
                 "",
-                s => s.FirstMidName, s => s.LastName, s => s.MatricNo, s => s.Email))
+                s => s.FirstMidName, s => s.LastName, s => s.MatricNo, s => s.Email, s => s.PhoneNumber))
             {
                 try
                 {

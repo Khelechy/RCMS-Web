@@ -167,6 +167,9 @@ namespace RCMS_web.Migrations
                     b.Property<string>("MatricNo")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ID");
 
                     b.ToTable("Student");

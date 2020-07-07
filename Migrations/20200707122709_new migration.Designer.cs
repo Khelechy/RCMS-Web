@@ -9,8 +9,8 @@ using RCMS_web.Data;
 namespace RCMS_web.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200703125016_Email Migration")]
-    partial class EmailMigration
+    [Migration("20200707122709_new migration")]
+    partial class newmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -167,6 +167,9 @@ namespace RCMS_web.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("MatricNo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");

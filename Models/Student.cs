@@ -20,6 +20,8 @@ namespace RCMS_web.Models
 
         public string Email {get; set; }
 
+        public string PhoneNumber {get; set; }
+
         public string MatricNo { get; set; }
         [Display(Name = "Full Name")]
         public string FullName
