@@ -114,14 +114,6 @@ namespace RCMS_web.Controllers
                 return NotFound();
             }
 
-            // using (WebClient client = new WebClient())
-            // {
-            //     string htmlCode = client.DownloadString("http://google.com");
-            //     scrappedHtml = htmlCode;
-            // }
-
-            //string viewFromCurrentController = await this.RenderViewToStringAsync("_NewsListHome", newsItem);
-            //string scrappedHtml = await _renderer.ViewRendererAsync("Details/3", Student);
             Dictionary<string, string> dicGrades = new Dictionary<string, string>();
             foreach(var item in student.Enrollments){
                 dicGrades.Add(item.Course.Title, item.Grade.ToString());
@@ -134,7 +126,7 @@ namespace RCMS_web.Controllers
             var table = "<table>" + tableContents + "</table>";
             
 
-            string htmlBody = "<h3>Name: " + student.FullName + "</h3><br/><h3>Matric No: " + student.MatricNo + "</h3><br/>" + table;
+            string htmlBody = "<h3>Name: " + student.FullName + "</h3><h3>Matric No: " + student.MatricNo + "</h3>" + table;
             SendIt(student, htmlBody);
 
             return View(student);
