@@ -1,28 +1,29 @@
-using System;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RCMS_web.Data;
 using RCMS_web.Models;
-using MailKit.Net.Smtp;
-using Microsoft.Extensions.Configuration;
 using MimeKit;
 using RCMS_web.Services;
+
+
+
+
 
 namespace RCMS_web.Controllers
 {
     public class StudentsController : Controller
     {
         private readonly SchoolContext _context;
-        private IEmailSender _emailSender;
+        private IViewRenderer _renderer;
 
-        public StudentsController(SchoolContext context, IEmailSender emailSender)
+        public StudentsController(SchoolContext context, IViewRenderer renderer)
         {
             _context = context;
-            _emailSender = emailSender;
+            _renderer = renderer;
         }
 
         // GET: Students
@@ -101,6 +102,7 @@ namespace RCMS_web.Controllers
                 return NotFound();
             }
 
+
             var student = await _context.Students
                 .Include(s => s.Enrollments)
                     .ThenInclude(e => e.Course)
@@ -112,12 +114,33 @@ namespace RCMS_web.Controllers
                 return NotFound();
             }
 
-            SendIt(student);
+            // using (WebClient client = new WebClient())
+            // {
+            //     string htmlCode = client.DownloadString("http://google.com");
+            //     scrappedHtml = htmlCode;
+            // }
+
+            //string viewFromCurrentController = await this.RenderViewToStringAsync("_NewsListHome", newsItem);
+            //string scrappedHtml = await _renderer.ViewRendererAsync("Details/3", Student);
+            Dictionary<string, string> dicGrades = new Dictionary<string, string>();
+            foreach(var item in student.Enrollments){
+                dicGrades.Add(item.Course.Title, item.Grade.ToString());
+            }
+
+            var trs = dicGrades.Select(a => String.Format("<tr><td>{0}</td><td>{1}</td></tr>", a.Key, a.Value));
+
+            var tableContents = String.Concat(trs);
+
+            var table = "<table>" + tableContents + "</table>";
+            
+
+            string htmlBody = "<h3>Name: " + student.FullName + "</h3><br/><h3>Matric No: " + student.MatricNo + "</h3><br/>" + table;
+            SendIt(student, htmlBody);
 
             return View(student);
         }
 
-        public async void SendIt(Student student, bool sendAsync = true){
+        public async void SendIt(Student student, string ScrappedView, bool sendAsync = true){
             MimeMessage message = new MimeMessage();
 
             MailboxAddress from = new MailboxAddress("UNN Result Admin", 
@@ -131,10 +154,10 @@ namespace RCMS_web.Controllers
             message.Subject = student.FirstMidName + " your result is ready";
 
             BodyBuilder bodyBuilder = new BodyBuilder();
-            bodyBuilder.HtmlBody = "<h1>This is your result</h1>";
+            bodyBuilder.HtmlBody = ScrappedView;
             message.Body = bodyBuilder.ToMessageBody();
 
-             using (var client = new MailKit.Net.Smtp.SmtpClient())
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
                 client.Authenticate("mconyekwerekelechi@gmail.com", "macmillian3"); // If using GMail this requires turning on LessSecureApps : https://myaccount.google.com/lesssecureapps
@@ -229,40 +252,7 @@ namespace RCMS_web.Controllers
             return View(studentToUpdate);
         }
 
-        // POST: Students/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstMidName,MatricNo")] Student student)
-        // {
-        //     if (id != student.ID)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     if (ModelState.IsValid)
-        //     {
-        //         try
-        //         {
-        //             _context.Update(student);
-        //             await _context.SaveChangesAsync();
-        //         }
-        //         catch (DbUpdateConcurrencyException)
-        //         {
-        //             if (!StudentExists(student.ID))
-        //             {
-        //                 return NotFound();
-        //             }
-        //             else
-        //             {
-        //                 throw;
-        //             }
-        //         }
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     return View(student);
-        // }
+       
 
         // GET: Students/Delete/5
         public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
@@ -318,5 +308,23 @@ namespace RCMS_web.Controllers
         {
             return _context.Students.Any(e => e.ID == id);
         }
+
+
+        
     }
+
+    // public static class Extension{
+    //     public static string PathToRazorPageFolder(this HttpRequest request)
+    //     {
+    //         if (request != null) {
+    //             var requestPath = request.Path.ToString();
+    //             var returnPathToFolder = request.Scheme + "://" + request.Host + requestPath.Substring(0, requestPath.LastIndexOf("/")); ;
+    //             return returnPathToFolder;
+    //         } else
+    //         {
+    //             return "HttpRequest was null";
+    //         }
+    //     }
+    // }
+
 }
