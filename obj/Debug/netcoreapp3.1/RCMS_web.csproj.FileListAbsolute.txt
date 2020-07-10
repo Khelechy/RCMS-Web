@@ -1,6 +1,7 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/appsettings.json
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/RCMS_web.StaticWebAssets.xml
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/RCMS_web
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/RCMS_web.deps.json
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/RCMS_web.runtimeconfig.json
@@ -12,6 +13,12 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/EntityFramework.SqlServer.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/EntityFramework.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/MailKit.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.UI.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
@@ -37,6 +44,10 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyModel.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
@@ -163,6 +174,7 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfoInputs.cache
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfo.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.csproj.CoreCompileInputs.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.MvcApplicationPartsAssemblyInfo.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.MvcApplicationPartsAssemblyInfo.cache
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cache
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cs
@@ -179,6 +191,11 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Departments/Details.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Departments/Edit.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Departments/Index.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Create.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Delete.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Details.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Edit.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Index.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Lecturers/Create.cshtml.g.cs
@@ -208,8 +225,3 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.dll
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.pdb
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.genruntimeconfig.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Create.cshtml.g.cs
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Delete.cshtml.g.cs
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Details.cshtml.g.cs
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Edit.cshtml.g.cs
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Enrollments/Index.cshtml.g.cs

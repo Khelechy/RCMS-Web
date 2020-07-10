@@ -67,7 +67,7 @@ namespace RCMS_web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID", enrollment.CourseID);
+            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "Title", enrollment.CourseID);
             ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FirstMidName", enrollment.StudentID);
             return View(enrollment);
         }
@@ -85,7 +85,7 @@ namespace RCMS_web.Controllers
             {
                 return NotFound();
             }
-            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID", enrollment.CourseID);
+            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "Title", enrollment.CourseID);
             ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FirstMidName", enrollment.StudentID);
             return View(enrollment);
         }
@@ -122,7 +122,7 @@ namespace RCMS_web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID", enrollment.CourseID);
+            ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "Title", enrollment.CourseID);
             ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FirstMidName", enrollment.StudentID);
             return View(enrollment);
         }

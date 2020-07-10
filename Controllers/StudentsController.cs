@@ -50,10 +50,11 @@ namespace RCMS_web.Controllers
             ViewData["CurrentFilter"] = searchString;
             var students = from s in _context.Students.Include(d => d.Department)
                         select s;
+
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.LastName.Contains(searchString)
-                                    || s.FirstMidName.Contains(searchString));
+                students = students.Where(s => s.LastName.ToLower().Contains(searchString.ToLower())
+                                    || s.FirstMidName.ToLower().Contains(searchString.ToLower()));
             }
             switch (sortOrder)
             {
@@ -131,7 +132,7 @@ namespace RCMS_web.Controllers
             var table = "<table>" + tableContents + "</table>";
             
 
-            string htmlBody = "<h3> Name: " + student.FullName + "</h3><h3> Matric No: " + student.MatricNo + "</h3><h3> Email: " + student.Email + "</h3><h3> Phone Number: " + student.PhoneNumber + "</h3>" +" </h3><h3> Department: " + student.Department.Name + "</h3><h3> Grades: " + table + "</h3>";
+            string htmlBody = "<h3> Name: " + student.FullName + "</h3><h3> Matric No: " + student.MatricNo + "</h3><h3> Email: " + student.Email + "</h3><h3> Phone Number: " + student.PhoneNumber + "</h3><h3> Grades: " + table + "</h3>";
             SendTheEmail(student, htmlBody);
 
             return View(student);
@@ -172,7 +173,7 @@ namespace RCMS_web.Controllers
             var studentPhoneNo = student.PhoneNumber;
             
 
-            string smsBody = " Name: " + student.FullName + " Matric No: " + student.MatricNo + " Email: " + student.Email + " Phone Number: " + student.PhoneNumber + "Department: " + student.Department.Name + " Grades: " + table;
+            string smsBody = " Name: " + student.FullName + " Matric No: " + student.MatricNo + " Email: " + student.Email + " Phone Number: " + student.PhoneNumber + " Grades: " + table;
             SendTheSms(student, smsBody, studentPhoneNo).Wait();
 
             return View(student);

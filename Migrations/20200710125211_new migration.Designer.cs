@@ -9,8 +9,8 @@ using RCMS_web.Data;
 namespace RCMS_web.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200707150240_Inital Mig")]
-    partial class InitalMig
+    [Migration("20200710125211_new migration")]
+    partial class newmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

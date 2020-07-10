@@ -1,5 +1,6 @@
 using RCMS_web.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace RCMS_web.Data
 {
