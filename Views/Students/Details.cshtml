@@ -23,6 +23,12 @@
             @Html.DisplayFor(model => model.FirstMidName)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.MatricNo)
         </dt>
         <dd class = "col-sm-10">
@@ -67,7 +73,7 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a> | 
-    <a asp-action="SendMail" asp-route-id="@Model.ID">click</a> | 
-    <a asp-action="SendSms" asp-route-id="@Model.ID">click</a>
+    <a asp-action="SendMail" asp-route-id="@Model.ID">Email Result</a> | 
+    <a asp-action="SendSms" asp-route-id="@Model.ID">Sms Result</a>
 
 </div>

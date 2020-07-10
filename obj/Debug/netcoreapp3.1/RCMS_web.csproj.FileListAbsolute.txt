@@ -1,10 +1,3 @@
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.csprojAssemblyReference.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfoInputs.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfo.cs
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.csproj.CoreCompileInputs.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.MvcApplicationPartsAssemblyInfo.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cache
-/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cs
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/appsettings.json
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
@@ -49,6 +42,9 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -77,11 +73,13 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Data.SqlClient.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Security.AccessControl.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Security.Principal.Windows.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.Text.Json.dll
+/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Twilio.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll
@@ -161,6 +159,13 @@
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
 /home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.csprojAssemblyReference.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfoInputs.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.AssemblyInfo.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.csproj.CoreCompileInputs.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.MvcApplicationPartsAssemblyInfo.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cache
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorAssemblyInfo.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.TagHelpers.input.cache
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.TagHelpers.output.cache
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorCoreGenerate.cache
@@ -191,6 +196,7 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Students/Edit.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Students/Index.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Students/SendMail.cshtml.g.cs
+/home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/Students/SendSms.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.RazorTargetAssemblyInfo.cache
@@ -202,8 +208,3 @@
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.dll
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.pdb
 /home/khelechy/projects/c#/RCMS_web/obj/Debug/netcoreapp3.1/RCMS_web.genruntimeconfig.cache
-/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
-/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
-/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
-/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
-/home/khelechy/projects/c#/RCMS_web/bin/Debug/netcoreapp3.1/Twilio.dll

@@ -16,23 +16,7 @@ namespace RCMS_web.Data
                 return;   // DB has been seeded
             }
 
-            var students = new Student[]
-            {
-                new Student{FirstMidName="Carson",LastName="Alexander",MatricNo="2017/24654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="John",LastName="Mont",MatricNo="2017/24554", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+23409031638456"},
-                new Student{FirstMidName="Queen",LastName="Oliver",MatricNo="2017/26654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="Megan",LastName="Joseph",MatricNo="2017/24764", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="Carl",LastName="Allison",MatricNo="2017/24984", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"},
-                new Student{FirstMidName="Nino",LastName="Olivetto",MatricNo="2017/245333", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456"}
-            };
-            foreach (Student s in students)
-            {
-                context.Students.Add(s);
-            }
-            context.SaveChanges();
-
+            
             var lecturers = new Lecturer[]
             {
                 new Lecturer { FirstMidName = "James",     LastName = "Abercrombie",
@@ -70,6 +54,24 @@ namespace RCMS_web.Data
                 context.Departments.Add(d);
             }
             context.SaveChanges();
+
+            var students = new Student[]
+            {
+                new Student{FirstMidName="Carson",LastName="Alexander",MatricNo="2017/24654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Computer Science").DepartmentID},
+                new Student{FirstMidName="John",LastName="Mont",MatricNo="2017/24554", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+23409031638456", DepartmentID = departments.Single( s => s.Name == "Mathematics").DepartmentID},
+                new Student{FirstMidName="Queen",LastName="Oliver",MatricNo="2017/26654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Economics").DepartmentID},
+                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Computer Science").DepartmentID},
+                new Student{FirstMidName="Killian",LastName="Yandex",MatricNo="2017/27654", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Statistics").DepartmentID},
+                new Student{FirstMidName="Megan",LastName="Joseph",MatricNo="2017/24764", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Statistics").DepartmentID},
+                new Student{FirstMidName="Carl",LastName="Allison",MatricNo="2017/24984", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Mathematics").DepartmentID},
+                new Student{FirstMidName="Nino",LastName="Olivetto",MatricNo="2017/245333", Email="Onyekwerekelechimac@gmail.com", PhoneNumber="+2349031638456", DepartmentID = departments.Single( s => s.Name == "Computer Science").DepartmentID}
+            };
+            foreach (Student s in students)
+            {
+                context.Students.Add(s);
+            }
+            context.SaveChanges();
+
 
             var courses = new Course[]
             {
@@ -177,19 +179,19 @@ namespace RCMS_web.Data
 
             var enrollments = new Enrollment[]
             {
-            new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
-            new Enrollment{StudentID=1,CourseID=3141,Grade=Grade.A},
-            new Enrollment{StudentID=1,CourseID=4022,Grade=Grade.C},
-            new Enrollment{StudentID=1,CourseID=4041,Grade=Grade.B},
-            new Enrollment{StudentID=2,CourseID=1045,Grade=Grade.B},
-            new Enrollment{StudentID=2,CourseID=3141,Grade=Grade.F},
-            new Enrollment{StudentID=2,CourseID=2021,Grade=Grade.F},
-            new Enrollment{StudentID=3,CourseID=1050},
-            new Enrollment{StudentID=4,CourseID=1050},
-            new Enrollment{StudentID=4,CourseID=4022,Grade=Grade.F},
-            new Enrollment{StudentID=5,CourseID=4041,Grade=Grade.C},
-            new Enrollment{StudentID=3,CourseID=1045},
-            new Enrollment{StudentID=3,CourseID=3141,Grade=Grade.A},
+                new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=1,CourseID=3141,Grade=Grade.A},
+                new Enrollment{StudentID=1,CourseID=4022,Grade=Grade.C},
+                new Enrollment{StudentID=1,CourseID=4041,Grade=Grade.B},
+                new Enrollment{StudentID=2,CourseID=1045,Grade=Grade.B},
+                new Enrollment{StudentID=2,CourseID=3141,Grade=Grade.F},
+                new Enrollment{StudentID=2,CourseID=2021,Grade=Grade.F},
+                new Enrollment{StudentID=3,CourseID=1050},
+                new Enrollment{StudentID=4,CourseID=1050},
+                new Enrollment{StudentID=4,CourseID=4022,Grade=Grade.F},
+                new Enrollment{StudentID=5,CourseID=4041,Grade=Grade.C},
+                new Enrollment{StudentID=3,CourseID=1045},
+                new Enrollment{StudentID=3,CourseID=3141,Grade=Grade.A},
             };
 
             foreach (Enrollment e in enrollments)

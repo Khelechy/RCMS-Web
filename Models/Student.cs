@@ -22,6 +22,12 @@ namespace RCMS_web.Models
 
         public string PhoneNumber {get; set; }
 
+        [Display(Name = "Department")]
+        public int DepartmentID { get; set; }
+
+        public Department Department { get; set; }
+
+
         public string MatricNo { get; set; }
         [Display(Name = "Full Name")]
         public string FullName

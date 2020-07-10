@@ -10,6 +10,7 @@ using MimeKit;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using RCMS_web.Services;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 
@@ -47,7 +48,7 @@ namespace RCMS_web.Controllers
                 searchString = currentFilter;
             }
             ViewData["CurrentFilter"] = searchString;
-            var students = from s in _context.Students
+            var students = from s in _context.Students.Include(d => d.Department)
                         select s;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -85,6 +86,7 @@ namespace RCMS_web.Controllers
             var student = await _context.Students
                 .Include(s => s.Enrollments)
                     .ThenInclude(e => e.Course)
+                    .ThenInclude(d => d.Department)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
 
@@ -108,6 +110,7 @@ namespace RCMS_web.Controllers
             var student = await _context.Students
                 .Include(s => s.Enrollments)
                     .ThenInclude(e => e.Course)
+                    .ThenInclude(d => d.Department)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
 
@@ -128,7 +131,7 @@ namespace RCMS_web.Controllers
             var table = "<table>" + tableContents + "</table>";
             
 
-            string htmlBody = "<h3>Name: " + student.FullName + "</h3><h3>Matric No: " + student.MatricNo + "</h3><h3>Email: " + student.Email + "</h3><h3> Phone Number: " + student.PhoneNumber + "</h3>" + table;
+            string htmlBody = "<h3> Name: " + student.FullName + "</h3><h3> Matric No: " + student.MatricNo + "</h3><h3> Email: " + student.Email + "</h3><h3> Phone Number: " + student.PhoneNumber + "</h3>" +" </h3><h3> Department: " + student.Department.Name + "</h3><h3> Grades: " + table + "</h3>";
             SendTheEmail(student, htmlBody);
 
             return View(student);
@@ -160,7 +163,7 @@ namespace RCMS_web.Controllers
                 dicGrades.Add(item.Course.Title, item.Grade.ToString());
             }
 
-            var trs = dicGrades.Select(a => String.Format("{0} = {1}", a.Key, a.Value));
+            var trs = dicGrades.Select(a => String.Format(" {0} = {1} , ", a.Key, a.Value));
 
             var tableContents = String.Concat(trs);
 
@@ -169,7 +172,7 @@ namespace RCMS_web.Controllers
             var studentPhoneNo = student.PhoneNumber;
             
 
-            string smsBody = "Name: " + student.FullName + "Matric No: " + student.MatricNo + "Email: " + student.Email + "Phone Number: " + student.PhoneNumber + table;
+            string smsBody = " Name: " + student.FullName + " Matric No: " + student.MatricNo + " Email: " + student.Email + " Phone Number: " + student.PhoneNumber + "Department: " + student.Department.Name + " Grades: " + table;
             SendTheSms(student, smsBody, studentPhoneNo).Wait();
 
             return View(student);
@@ -213,7 +216,7 @@ namespace RCMS_web.Controllers
         public async Task SendTheSms(Student student, string smsBody, string studentPhoneNo){
            // Find your Account Sid and Token at twilio.com/console
             const string accountSid = "AC8bf3b6275b87918384cd7e3d3a39da1c";
-            const string authToken = "c9352368fcc62926e4fa236f7a9546d8";
+            const string authToken = "cf6354b6d7f55d9b626f2ec0ddc9b4c9";
 
             TwilioClient.Init(accountSid, authToken);
 
@@ -229,6 +232,7 @@ namespace RCMS_web.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
+            PopulateDepartmentsDropDownList();
             return View();
         }
 
@@ -237,7 +241,7 @@ namespace RCMS_web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("LastName,FirstMidName,MatricNo,Email,PhoneNumber")] Student student)
+        public async Task<IActionResult> Create([Bind("LastName,FirstMidName,MatricNo,Email,PhoneNumber,DepartmentID")] Student student)
         {
             try{
                 if (ModelState.IsValid)
@@ -253,6 +257,7 @@ namespace RCMS_web.Controllers
                         "Try again, and if the problem persists " +
                         "see your system administrator.");
                 }
+            PopulateDepartmentsDropDownList(student.DepartmentID);
             return View(student);
         }
 
@@ -285,7 +290,7 @@ namespace RCMS_web.Controllers
             if (await TryUpdateModelAsync<Student>(
                 studentToUpdate,
                 "",
-                s => s.FirstMidName, s => s.LastName, s => s.MatricNo, s => s.Email, s => s.PhoneNumber))
+                s => s.FirstMidName, s => s.LastName, s => s.MatricNo, s => s.Email, s => s.PhoneNumber, s => s.DepartmentID))
             {
                 try
                 {
@@ -303,7 +308,13 @@ namespace RCMS_web.Controllers
             return View(studentToUpdate);
         }
 
-       
+        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        {
+            var departmentsQuery = from d in _context.Departments
+                orderby d.Name
+                select d;
+            ViewBag.DepartmentID = new SelectList(departmentsQuery.AsNoTracking(), "DepartmentID", "Name", selectedDepartment);
+        }
 
         // GET: Students/Delete/5
         public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)

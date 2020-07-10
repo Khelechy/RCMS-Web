@@ -9,8 +9,8 @@ using RCMS_web.Data;
 namespace RCMS_web.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200707122709_new migration")]
-    partial class newmigration
+    [Migration("20200707150240_Inital Mig")]
+    partial class InitalMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -152,6 +152,9 @@ namespace RCMS_web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
@@ -173,6 +176,8 @@ namespace RCMS_web.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("DepartmentID");
 
                     b.ToTable("Student");
                 });
@@ -228,6 +233,15 @@ namespace RCMS_web.Migrations
                     b.HasOne("RCMS_web.Models.Lecturer", "Lecturer")
                         .WithOne("OfficeAssignment")
                         .HasForeignKey("RCMS_web.Models.OfficeAssignment", "LecturerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("RCMS_web.Models.Student", b =>
+                {
+                    b.HasOne("RCMS_web.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
