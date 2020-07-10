@@ -20551,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Enrollments/Create.cshtml",
+      "TargetPath": "Views\\Enrollments\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Students/Details.cshtml",
       "TargetPath": "Views\\Students\\Details.cshtml",
       "FileKind": "mvc"
@@ -20561,8 +20566,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Enrollments/Edit.cshtml",
+      "TargetPath": "Views\\Enrollments\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Lecturers/Details.cshtml",
       "TargetPath": "Views\\Lecturers\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Enrollments/Details.cshtml",
+      "TargetPath": "Views\\Enrollments\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20616,6 +20631,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Enrollments/Index.cshtml",
+      "TargetPath": "Views\\Enrollments\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Departments/Details.cshtml",
       "TargetPath": "Views\\Departments\\Details.cshtml",
       "FileKind": "mvc"
@@ -20638,6 +20658,11 @@
     {
       "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/khelechy/projects/c#/RCMS_web/Views/Enrollments/Delete.cshtml",
+      "TargetPath": "Views\\Enrollments\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
