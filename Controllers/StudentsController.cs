@@ -11,10 +11,7 @@ using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using RCMS_web.Services;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
-
-
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace RCMS_web.Controllers
 {
@@ -30,7 +27,7 @@ namespace RCMS_web.Controllers
         }
 
         // GET: Students
-     public async Task<IActionResult> Index(
+        public async Task<IActionResult> Index(
             string sortOrder,
             string currentFilter,
             string searchString,
