@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace RCMS_web.Data
 {
-    public class SchoolContext : IdentityDbContext<ApplicationUser>
+    public class SchoolContext : DbContext
     {
         public SchoolContext(DbContextOptions<SchoolContext> options) : base(options)
         {
@@ -18,6 +18,8 @@ namespace RCMS_web.Data
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
         public DbSet<CourseAssignment> CourseAssignments { get; set; }
 
+        public DbSet<Admin> Admins { set; get; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -30,6 +32,7 @@ namespace RCMS_web.Data
             modelBuilder.Entity<Lecturer>().ToTable("Lecturer");
             modelBuilder.Entity<OfficeAssignment>().ToTable("OfficeAssignment");
             modelBuilder.Entity<CourseAssignment>().ToTable("CourseAssignment");
+            modelBuilder.Entity<Admin>().ToTable("Admin");
 
             modelBuilder.Entity<CourseAssignment>()
                 .HasKey(c => new { c.CourseID, c.LecturerID });

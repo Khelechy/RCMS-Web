@@ -31,11 +31,24 @@ namespace RCMS_web.Data
                     Email="john.kele@gmail.com" }
             };
 
+
             foreach (Lecturer i in lecturers)
             {
                 context.Lecturers.Add(i);
             }
             context.SaveChanges();
+
+            var admins = new Admin[]
+            {
+                new Admin { Email = "Admin@rcms.com", Password = "mypassword"}
+            };
+
+            foreach(Admin a in admins)
+			{
+                context.Admins.Add(a);
+			}
+            context.SaveChanges();
+           
 
             var departments = new Department[]
             {

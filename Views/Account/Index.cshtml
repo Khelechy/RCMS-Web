@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Admin - Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCMS_Web - Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <img class="wave" src="img/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="img/bg.svg">
+        </div>
+        <div class="login-content">
+            <div>
+                <h3 style="color: #32be8f;">Admin Login</h3>
+                <br />
+                <form class="form" role="form" asp-action="Login" asp-controller="Account" method="post">
+                    <!-- <img src="img/avatar.svg"> -->
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            @*<label for="Email">User Name</label>*@
+                            <input type="email" name="Email" asp-for="Email" autocomplete="off" class="form-control input-sm" placeholder="Email Address">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            @*<label for="Password">Password</label>*@
+                            <input type="password" name="Password" asp-for="Password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- <a href="#">Forgot Password?</a> -->
+                    <br />
+                    <input type="submit" class="btn" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

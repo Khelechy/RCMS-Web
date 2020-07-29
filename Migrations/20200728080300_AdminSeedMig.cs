@@ -3,16 +3,31 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RCMS_web.Migrations
 {
-    public partial class newmigration : Migration
+    public partial class AdminSeedMig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Admin",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admin", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Lecturer",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(maxLength: 20, nullable: false),
                     FirstName = table.Column<string>(maxLength: 20, nullable: false),
                     Email = table.Column<string>(nullable: true)
@@ -27,7 +42,7 @@ namespace RCMS_web.Migrations
                 columns: table => new
                 {
                     DepartmentID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 50, nullable: true),
                     Budget = table.Column<decimal>(type: "money", nullable: false),
                     LecturerID = table.Column<int>(nullable: true),
@@ -87,7 +102,7 @@ namespace RCMS_web.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(maxLength: 50, nullable: false),
                     FirstName = table.Column<string>(maxLength: 50, nullable: false),
                     Email = table.Column<string>(nullable: true),
@@ -135,9 +150,9 @@ namespace RCMS_web.Migrations
                 columns: table => new
                 {
                     EnrollmentID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CourseID = table.Column<int>(nullable: false),
-                    StudentID = table.Column<int>(nullable: false),
+                    StudentID = table.Column<int>(nullable: true),
                     Grade = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -154,7 +169,7 @@ namespace RCMS_web.Migrations
                         column: x => x.StudentID,
                         principalTable: "Student",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -190,6 +205,9 @@ namespace RCMS_web.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Admin");
+
             migrationBuilder.DropTable(
                 name: "CourseAssignment");
 
