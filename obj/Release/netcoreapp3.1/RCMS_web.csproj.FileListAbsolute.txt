@@ -216,15 +216,4 @@ C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\staticwebasset
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\RCMS_web.dll
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\RCMS_web.pdb
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\RCMS_web.genruntimeconfig.cache
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\Users\khelechy\source\repos\RCMS-Web\bin\Release\netcoreapp3.1\app\web.config
-C:\Users\khelechy\source\repos\RCMS-Web\bin\Release\netcoreapp3.1\app\appsettings.Development.json
-C:\Users\khelechy\source\repos\RCMS-Web\bin\Release\netcoreapp3.1\app\appsettings.json
-C:\Users\khelechy\source\repos\RCMS-Web\bin\Release\netcoreapp3.1\app\RCMS_web.deps.json
-C:\Users\khelechy\source\repos\RCMS-Web\bin\Release\netcoreapp3.1\app\RCMS_web.runtimeconfig.json
+C:\Users\khelechy\source\repos\RCMS-Web\obj\Release\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs

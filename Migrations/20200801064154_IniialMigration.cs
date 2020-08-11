@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RCMS_web.Migrations
 {
-    public partial class AdminSeedMig : Migration
+    public partial class IniialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

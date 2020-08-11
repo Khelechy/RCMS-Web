@@ -441,3 +441,6 @@ C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.pdb
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.genruntimeconfig.cache
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.csprojAssemblyReference.cache
 C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.csproj.CoreCompileInputs.cache
+C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\khelechy\source\repos\RCMS-Web\obj\Debug\netcoreapp3.1\RCMS_web.MvcApplicationPartsAssemblyInfo.cache

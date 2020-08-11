@@ -10,8 +10,8 @@ using RCMS_web.Data;
 namespace RCMS_web.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20200728080300_AdminSeedMig")]
-    partial class AdminSeedMig
+    [Migration("20200801064154_IniialMigration")]
+    partial class IniialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
